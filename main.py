@@ -117,4 +117,17 @@ if __name__ == '__main__':
             print(*(f'{val}' for val in line), end='')
             print("]")
 
-        resolve_matrix(matrix)
+        resolve_matrix(matrix) 
+        
+        # End of the program 
+        # input("Press Enter to exit...")
+        # exit()
+def gauss_partial(matrix: list, index_column: int):
+    index_max_val = index_column
+
+    for i in range(index_column, len(matrix)):
+        if matrix[index_column][index_column] < abs(matrix[i][index_column]):
+            index_max_val = i
+
+    if index_column != index_max_val:
+        matrix[index_column], matrix[index_max_val] = matrix[index_max_val], matrix[index_column]
